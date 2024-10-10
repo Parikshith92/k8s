@@ -76,7 +76,7 @@ sudo systemctl enable docker.service && echo "    docker.service enabled"
 
 echo -e "\n-------------------------- Install kubeadm, kubelet, kubectl and kubernetes-cni --------------------------\n"
 sudo apt-get install -y kubeadm kubelet kubectl
-sudo snap install kubectx --classic
+sudo snap install kubectl --classic
 
 if [[ "$1" == 'master' ]]; then 
 echo -e "\n-------------------------- Initiating kubeadm control-plane (master node) --------------------------\n"
@@ -94,7 +94,7 @@ echo "      2. If the join command is lost, we can generate it using bellow comm
 echo "            kubeadm token create --print-join-command"
 echo -e "\n-----------------------------------------------------------------------------------\n"
 
-echo -e "\n-------------------------- Setiing-up Kubectl config  --------------------------\n"
+echo -e "\n-------------------------- Setting-up Kubectl config  --------------------------\n"
 sleep 4
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config 
